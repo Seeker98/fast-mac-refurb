@@ -1,0 +1,54 @@
+{
+  "name": "fast-mac-refurb",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "TELEGRAM_BOT_TOKEN": {
+        "description": "Telegram 机器人的 token，找 [@BotFather](https://t.me/BotFather) 发 `/newbot` 获得"
+      },
+      "TELEGRAM_CHAT_ID": {
+        "description": "接收通知的 chat id。先给你的机器人发一条消息，再打开 `https://api.telegram.org/bot<token>/getUpdates`，找 `chat.id`"
+      },
+      "TEST_NOTIFY_SECRET": {
+        "description": "随便设一个长字符串，用来调用 `/test-notify?key=...` 测试通知"
+      },
+      "MODEL": {
+        "description": "产品线：`macbookpro` / `macbookair` 等"
+      },
+      "SCREEN_SIZE": {
+        "description": "屏幕尺寸，如 `14inch`、`16inch`"
+      },
+      "MEMORY_OPTIONS": {
+        "description": "可接受的内存，**按优先级从高到低**，逗号分隔，如 `32gb,24gb`"
+      },
+      "CHIP_OPTIONS": {
+        "description": "可接受的芯片，**按优先级从高到低**，逗号分隔，如 `M5,M5 Pro`"
+      },
+      "CHIP_MEMORY_OVERRIDES": {
+        "description": "某些芯片只接受特定内存，如 `M5 Pro=24gb; M5 Max=36gb|48gb`；留空表示不限制"
+      },
+      "CAPACITY": {
+        "description": "硬盘容量，如 `1tb`"
+      },
+      "MAX_PRICE_USD": {
+        "description": "最高价格(美元)；留空表示不限价"
+      },
+      "PREFER_NANO_TEXTURE": {
+        "description": "同等条件下是否优先 nano-texture 屏幕：`true` / `false`"
+      },
+      "PREFER_COLOR": {
+        "description": "同等条件下优先的颜色，如 `spaceblack`、`silver`；留空表示无偏好"
+      }
+    }
+  }
+}

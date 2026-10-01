@@ -1,0 +1,39 @@
+{
+	"name": "fast-mac-refurb",
+	"main": "src/worker.js",
+	"compatibility_date": "2026-09-28",
+	"triggers": {
+		"crons": [
+			"* * * * *"
+		]
+	},
+	// 选购条件。改完重新部署即可生效，格式说明见 README.md
+	"vars": {
+		"MODEL": "macbookpro",
+		"SCREEN_SIZE": "14inch",
+		"MEMORY_OPTIONS": "32gb,24gb",
+		"CHIP_OPTIONS": "M5,M5 Pro",
+		"CHIP_MEMORY_OVERRIDES": "M5 Pro=24gb",
+		"CAPACITY": "1tb",
+		"MAX_PRICE_USD": "2249",
+		"PREFER_NANO_TEXTURE": "true",
+		"PREFER_COLOR": "spaceblack"
+	},
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "POLLER",
+				"class_name": "Poller"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": ["Poller"]
+		}
+	],
+	"observability": {
+		"enabled": true
+	}
+}

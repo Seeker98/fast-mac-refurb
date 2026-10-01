@@ -1,0 +1,14 @@
+# 含密钥/个人信息，绝不能提交
+config.json
+.dev.vars
+.env
+
+# 运行时产物
+state.json
+logs-*.json
+.wrangler/
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/

@@ -1,0 +1,15 @@
+[Unit]
+Description=Apple Refurbished MacBook Pro Stock Checker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/refurb_tracker
+ExecStart=/opt/refurb_tracker/venv/bin/python /opt/refurb_tracker/stock_checker.py
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

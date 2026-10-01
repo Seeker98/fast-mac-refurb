@@ -1,0 +1,41 @@
+{
+  "check_interval_seconds": 60,
+  "page_url": "https://www.apple.com/shop/refurbished/mac/14-inch-macbook-pro-24gb-32gb",
+
+  "target": {
+    "screen_size": "14inch",
+    "model": "macbookpro",
+    "memory_options_by_priority": ["32gb", "24gb"],
+    "chip_options_by_priority": ["M5", "M5 Pro"],
+    "chip_memory_overrides": {
+      "M5 Pro": ["24gb"]
+    },
+    "required_capacity": "1tb",
+    "max_price_usd": 2249,
+    "prefer_nano_texture": true,
+    "prefer_color": "spaceblack"
+  },
+
+  "notifications": {
+    "telegram": {
+      "enabled": true,
+      "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+      "chat_id": "YOUR_TELEGRAM_CHAT_ID"
+    },
+    "email": {
+      "enabled": false,
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 587,
+      "username": "you@example.com",
+      "password": "YOUR_APP_PASSWORD",
+      "to_addr": "you@example.com"
+    },
+    "whatsapp_twilio": {
+      "enabled": false,
+      "account_sid": "YOUR_TWILIO_ACCOUNT_SID",
+      "auth_token": "YOUR_TWILIO_AUTH_TOKEN",
+      "from_whatsapp": "whatsapp:+14155238886",
+      "to_whatsapp": "whatsapp:+10000000000"
+    }
+  }
+}
